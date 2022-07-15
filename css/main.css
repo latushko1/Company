@@ -711,11 +711,11 @@ body{
 }
 
 .bg-\[url\(\/img\/bg-hero\.jpg\)\] {
-  background-image: url(/img/bg-hero.jpg);
+  background-image: url(/company/img/bg-hero.jpg);
 }
 
 .bg-\[url\(\/img\/video\.jpg\)\] {
-  background-image: url(/img/video.jpg);
+  background-image: url(/company/img/video.jpg);
 }
 
 .bg-cover {
