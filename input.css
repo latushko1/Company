@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body{
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@layer components{
+    .container{
+        @apply max-w-[1200px]
+    }
+}
+
+
+/* <----------------------- Burger menu setup -----------------------> */
+
+html{
+  scroll-behavior: smooth;
+}
+
+.text-header{
+   padding-bottom: 1px;
+    position: relative;
+}
+
+.btn{
+    border: 3px solid white;
+    transition: all .3s ease-in-out;
+    color: white;
+}
+
+.btn:hover{
+    /* border: none; */
+    background-color: #fff;
+    color: black;
+}
+.text-header::before{
+    content: '';
+    width: 0;
+    height: 2px;
+    color: white;
+    background-color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    transition: all .3s ease-in-out;
+}
+
+.text-header:hover::before{
+    width: 100%;
+}
+
+
+.burger{
+    z-index: 999;
+    height: 20px;
+    position: relative;
+    width: 30px;
+  }
+  .burger-line{
+    display: flex;
+    width: 30px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transition: .3s all ease;
+  }
+  
+  .top-line{
+    position: absolute;
+    left:0;
+    top: 0;
+  }
+  
+  .mid-line{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+  }
+  
+  .bottom-line{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .burger.active>.top-line{
+    transform: translateY(8px) rotate(45deg);
+    transition: .3s all ease;
+  }
+  
+  .burger.active>.mid-line{
+    margin-top: -10px;
+    transform: translateY(8px) rotate(135deg);
+    transition: .3s all ease;
+  }
+  
+  .burger.active>.bottom-line{
+    opacity: 0;
+    transition: .3s all ease;
+  }
+.menu-active{
+  transform: translateX(100%);
+  transition: all 1s ease-in-out;
+}
+
+/* list */
+.menu{
+   min-height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    width: 50%;
+    right: 0;
+    height: 109.7vh;
+    transform: translateX(0%);
+    background-color: rgb(19, 54, 63);
+    justify-content: space-between;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 50px 0;
+    margin: 0;
+    transition: 1s;
+    
+}
+/* nav-item */
+.text-menu{
+
+    color: rgb(255, 255, 255);
+    padding: 0;
+    margin: 30px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-sec:hover{
+  -webkit-box-shadow: 2px 3px 9px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 3px 9px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 3px 9px 2px rgba(0, 0, 0, 0.2);
+}
+
+#slider
+{
+ height: 100vh;
+ position: relative;
+ overflow: hidden;
+ width: 100%;
+ margin: 0 auto;
+ z-index: 0;
+}
+#slider ul
+{
+ list-style: none;
+ position: absolute;
+ top: 0;
+ left: 0;
+ margin: 0;
+ height: 100%;
+ padding: 0;
+}
+
+#slider ul > a
+{
+ position: relative;
+ float: left;
+ width: 100%;
+ max-width: 100%;
+ height: 100%;
+ max-height: 100%;
+ text-align: center;
+ text-decoration: none;
+}
+.control
+{
+ display: block;
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ width: auto;
+ height: auto;
+ padding: 2%;
+ background: #2a2a2a;
+ text-decoration: none;
+ color: #fff;
+ opacity: 0.8;
+ z-index: 1;
+ cursor: pointer;
+}
+.control:hover
+{
+ opacity: 1;
+ transition: all 0.2s ease;
+}
+.prev
+{
+ border-radius: 0 14px 14px 0;
+}
+.next
+{
+ right: 0;
+ border-radius: 14px 0 0 14px;
+}
+
+header{
+  transition: all  ease-in-out;
+  animation: headerLoad 1s forwards;
+}
